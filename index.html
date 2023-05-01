@@ -7,4 +7,42 @@
     <h1>Example app</h1>
 </body>
 
+
+<script>
+
+
+    function renderOrderInfo() {
+        var orderInfo = getOrderInfo()
+        var orderInfoElement = document.getElementById("orderInfo")
+        orderInfoElement.innerHTML = orderInfo
+    }
+
+
+    function getOrderCount() {
+        var orderCount = prompt("How many items would you like to order?")
+        if (orderCount == "" || !isFinite(orderCount)) {
+            alert("You must enter a number")
+            // Re run the initial prompt
+            getOrderCount()
+            return
+        }
+        else {
+            alert("You entered valid info!")
+        }
+    }
+
+    function getOrderName() {
+        var itemName = prompt("What is the name of the item you would like to buy?")
+        if (itemName == "") {
+            alert("You must enter an item")
+            // Re run the initial prompt
+            getOrderName()
+            return
+        }
+        getOrderCount()
+    }
+
+    getOrderName()
+</script>
+
 </html>
